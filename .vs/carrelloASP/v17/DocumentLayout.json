@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__GABRIELE_CODE_5A_INFORMATICA_ASP_CARRELLOASP_CARRELLOASP_APP_DATA_CARRELLOASP.MDF/True/SqlTable/dbo.users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|c:\\gabriele\\code\\5a\\informatica\\asp\\carrelloasp\\carrelloasp\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|solutionrelative:carrelloasp\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|c:\\gabriele\\code\\5a\\informatica\\asp\\carrelloasp\\carrelloasp\\classi\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|solutionrelative:carrelloasp\\classi\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|c:\\gabriele\\code\\5a\\informatica\\asp\\carrelloasp\\carrelloasp\\pubblica\\registrazione.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|solutionrelative:carrelloasp\\pubblica\\registrazione.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|c:\\gabriele\\code\\5a\\informatica\\asp\\carrelloasp\\carrelloasp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|solutionrelative:carrelloasp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|c:\\gabriele\\code\\5a\\informatica\\asp\\carrelloasp\\carrelloasp\\pubblica\\registrazione.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{15886E3C-27E9-41BA-916D-8F8848CE785C}|carrelloASP\\carrelloASP.csproj|solutionrelative:carrelloasp\\pubblica\\registrazione.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.users [Dati]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__GABRIELE_CODE_5A_INFORMATICA_ASP_CARRELLOASP_CARRELLOASP_APP_DATA_CARRELLOASP.MDF/True/SqlTable/dbo.users.sql",
+              "ToolTip": "dbo.users [Dati]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002897|",
+              "WhenOpened": "2024-04-26T13:18:37.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "default.aspx.cs",
+              "DocumentMoniker": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\default.aspx.cs",
+              "RelativeDocumentMoniker": "carrelloASP\\default.aspx.cs",
+              "ToolTip": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\default.aspx.cs",
+              "RelativeToolTip": "carrelloASP\\default.aspx.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAhwB4AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T13:16:06.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "registrazione.aspx.cs",
+              "DocumentMoniker": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Pubblica\\registrazione.aspx.cs",
+              "RelativeDocumentMoniker": "carrelloASP\\Pubblica\\registrazione.aspx.cs",
+              "ToolTip": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Pubblica\\registrazione.aspx.cs",
+              "RelativeToolTip": "carrelloASP\\Pubblica\\registrazione.aspx.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwBgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T12:26:39.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "users.cs",
+              "DocumentMoniker": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Classi\\users.cs",
+              "RelativeDocumentMoniker": "carrelloASP\\Classi\\users.cs",
+              "ToolTip": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Classi\\users.cs",
+              "RelativeToolTip": "carrelloASP\\Classi\\users.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAAwCwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T12:39:58.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "default.aspx",
+              "DocumentMoniker": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\default.aspx",
+              "RelativeDocumentMoniker": "carrelloASP\\default.aspx",
+              "ToolTip": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\default.aspx",
+              "RelativeToolTip": "carrelloASP\\default.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-26T13:05:49.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "registrazione.aspx",
+              "DocumentMoniker": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Pubblica\\registrazione.aspx",
+              "RelativeDocumentMoniker": "carrelloASP\\Pubblica\\registrazione.aspx",
+              "ToolTip": "C:\\Gabriele\\code\\5A\\informatica\\asp\\carrelloASP\\carrelloASP\\Pubblica\\registrazione.aspx",
+              "RelativeToolTip": "carrelloASP\\Pubblica\\registrazione.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-26T12:23:58.022Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
