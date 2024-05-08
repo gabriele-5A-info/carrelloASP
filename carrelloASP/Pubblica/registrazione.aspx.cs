@@ -21,14 +21,14 @@ namespace carrelloASP.Pubblica
 
         protected void btnAccedi_Click(object sender, EventArgs e)
         {
-            users user = new users(txtEmailAccedi.Text, txtPasswordAccedi.Text);
+            clsUsers user = new clsUsers(txtEmailAccedi.Text, txtPasswordAccedi.Text);
             Session["user"] = user.getUser();
             Response.Redirect("../default.aspx");
         }
 
         protected void btnRegistrati_Click(object sender, EventArgs e)
         {
-            users user = new users(txtUsernameRegistrati.Text, txtPasswordRegistrati.Text, txtEmailRegistrati.Text, rblRole.SelectedValue);
+            clsUsers user = new clsUsers(txtUsernameRegistrati.Text, txtPasswordRegistrati.Text, txtEmailRegistrati.Text, rblRole.SelectedValue);
             user.inserisci();
             Response.Redirect("../default.aspx");
         }

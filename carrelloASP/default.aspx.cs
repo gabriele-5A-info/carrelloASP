@@ -18,22 +18,97 @@ namespace carrelloASP
         {
             if (!Page.IsPostBack)
             {
-                // collegamento al db
                 adoNet.impostaConnessione("App_Data/carrelloASP.mdf");
             }
 
             if (Session["user"] != null)
             {
-                users user = (users)Session["user"];
+                clsUsers user = (clsUsers)Session["user"];
                 lblBenvenuto.Text = "Benvenuto " + user.username;
             }
             else
                 lblBenvenuto.Text = "Benvenuto ospite";
+
+            showProdotti();
         }
 
         protected void btnAccediRegistrati_Click(object sender, EventArgs e)
         {
             Response.Redirect("Pubblica/registrazione.aspx");
+        }
+
+        protected void btnFornitore_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Pubblica/prodotti.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Pubblica/admin.aspx");
+        }
+
+        private void showProdotti()
+        {
+            List<clsProdotti> prodotti = new clsProdotti().elencoLista(false);
+
+            foreach (clsProdotti prodotto in prodotti)
+            {
+                Panel panel = new Panel();
+                panel.CssClass = "panel panel-default";
+
+                Panel panelBody = new Panel();
+                panelBody.CssClass = "panel-body";
+
+                Image img = new Image();
+                img.ImageUrl = "Immagini/" + prodotto.immagine;
+                img.CssClass = "img-responsive";
+                img.Width = 150;
+                img.Height = 150;
+
+                Label lblNome = new Label();
+                lblNome.Text = prodotto.nome;
+                lblNome.CssClass = "text-primary";
+
+                Label lblDescrizione = new Label();
+                lblDescrizione.Text = prodotto.descrizione;
+                lblDescrizione.CssClass = "text-info";
+
+                Label lblPrezzo = new Label();
+                lblPrezzo.Text = "Prezzo: " + prodotto.prezzo + " €";
+                lblPrezzo.CssClass = "text-danger";
+
+                Label lblQuantita = new Label();
+                lblQuantita.Text = "Quantità: " + prodotto.quantita;
+                lblQuantita.CssClass = "text-warning";
+
+                Button btnAcquista = new Button();
+                btnAcquista.Text = "Acquista";
+                btnAcquista.CssClass = "btn btn-success";
+                btnAcquista.Click += new EventHandler(btnAcquista_Click);
+                btnAcquista.CommandArgument = prodotto.id.ToString();
+
+                panelBody.Controls.Add(img);
+                panelBody.Controls.Add(new LiteralControl("<br />"));
+                panelBody.Controls.Add(lblNome);
+                panelBody.Controls.Add(new LiteralControl("<br />"));
+                panelBody.Controls.Add(lblDescrizione);
+                panelBody.Controls.Add(new LiteralControl("<br />"));
+                panelBody.Controls.Add(lblPrezzo);
+                panelBody.Controls.Add(new LiteralControl("<br />"));
+                panelBody.Controls.Add(lblQuantita);
+                panelBody.Controls.Add(new LiteralControl("<br />"));
+                panelBody.Controls.Add(btnAcquista);
+
+                panel.Controls.Add(panelBody);
+
+                pnlProdotti.Controls.Add(panel);
+            }
+        }
+
+        private void btnAcquista_Click(object sender, EventArgs e)
+        {
+            Session["prodotto_id"] = ((Button)sender).CommandArgument;
+            Response.Redirect("Pubblica/acquista.aspx");
         }
     }
 }

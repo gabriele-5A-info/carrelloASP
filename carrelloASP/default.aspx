@@ -13,6 +13,16 @@
             <asp:Button ID="btnAccediRegistrati" runat="server" Text="accedi o registrati" OnClick="btnAccediRegistrati_Click" />
             <br />
             <asp:Label ID="lblBenvenuto" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnFornitore" runat="server" Text="pannello fornitore" OnClick="btnFornitore_Click" />
+            <br />
+            <br />
+            <asp:Button ID="btnAdmin" runat="server" Text="pannello admin" OnClick="btnAdmin_Click" />
+            <br />
+            <br />
+            <asp:Panel ID="pnlProdotti" runat="server">
+            </asp:Panel>
         </div>
     </form>
 </body>

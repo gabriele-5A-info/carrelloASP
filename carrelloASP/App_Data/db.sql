@@ -49,3 +49,7 @@ DBCC CHECKIDENT ('prodotti', RESEED, 0);
 INSERT INTO [dbo].[users] ([username], [password], [email], [role]) VALUES ('admin', 'admin', 'admin@gmail.com', 'admin');
 INSERT INTO [dbo].[users] ([username], [password], [email], [role]) VALUES ('fornitore', 'fornitore', 'fornitore@gmail.com', 'fornitore');
 INSERT INTO [dbo].[users] ([username], [password], [email], [role]) VALUES ('user', 'user', 'user@gmail.com', 'user');
+
+INSERT INTO [dbo].[categorie] ([nome]) VALUES ('elettronica');
+INSERT INTO [dbo].[categorie] ([nome]) VALUES ('abbigliamento');
+INSERT INTO [dbo].[categorie] ([nome]) VALUES ('casa');
