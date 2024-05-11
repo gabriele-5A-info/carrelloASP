@@ -2,6 +2,8 @@
 DROP TABLE IF EXISTS [dbo].[prodotti];
 DROP TABLE IF EXISTS [dbo].[categorie];
 DROP TABLE IF EXISTS [dbo].[users];
+DROP TABLE IF EXISTS [dbo].[carrelli];
+DROP TABLE IF EXISTS [dbo].[storico_ordini]
 
 
 /* creazione delle tabelle */
@@ -38,11 +40,35 @@ CREATE TABLE [dbo].[prodotti] (
 	FOREIGN KEY ([fornitore_id]) REFERENCES [users]([id])
 );
 
+/* carrello */
+CREATE TABLE [dbo].[carrelli] (
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[quantita] INT NOT NULL,
+	[prodotto_id] INT NOT NULL,
+	[user_id] INT NOT NULL,
+	[validita] BIT NOT NULL DEFAULT 1,
+	FOREIGN KEY ([prodotto_id]) REFERENCES [prodotti]([id]),
+	FOREIGN KEY ([user_id]) REFERENCES [users]([id])
+);
+
+/* storico ordini */
+CREATE TABLE [dbo].[storico_ordini] (
+	[id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[quantita] INT NOT NULL,
+	[prodotto_id] INT NOT NULL,
+	[user_id] INT NOT NULL,
+	[data] DATETIME NOT NULL,
+	[validita] BIT NOT NULL DEFAULT 1,
+	FOREIGN KEY ([prodotto_id]) REFERENCES [prodotti]([id]),
+	FOREIGN KEY ([user_id]) REFERENCES [users]([id])
+);
 
 /* azzeramento degli indici */
 DBCC CHECKIDENT ('users', RESEED, 0);
 DBCC CHECKIDENT ('categorie', RESEED, 0);
 DBCC CHECKIDENT ('prodotti', RESEED, 0);
+DBCC CHECKIDENT ('carrelli', RESEED, 0);
+DBCC CHECKIDENT ('storico_ordini', RESEED, 0)
 
 
 /* creazione di dati di test */

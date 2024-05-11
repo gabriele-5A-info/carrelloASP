@@ -71,14 +71,18 @@
     <Content Include="default.aspx" />
     <Content Include="Pubblica\acquista.aspx" />
     <Content Include="Pubblica\admin.aspx" />
+    <Content Include="Pubblica\carrello.aspx" />
     <Content Include="Pubblica\prodotti.aspx" />
     <Content Include="Pubblica\registrazione.aspx" />
+    <Content Include="Pubblica\storico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adoNet_sqlServer.cs" />
+    <Compile Include="Classi\clsCarrelli.cs" />
     <Compile Include="Classi\clsCategorie.cs" />
     <Compile Include="Classi\clsProdotti.cs" />
+    <Compile Include="Classi\clsStoricoOrdini.cs" />
     <Compile Include="Classi\clsUsers.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -102,6 +106,13 @@
     <Compile Include="Pubblica\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pubblica\carrello.aspx.cs">
+      <DependentUpon>carrello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pubblica\carrello.aspx.designer.cs">
+      <DependentUpon>carrello.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pubblica\prodotti.aspx.cs">
       <DependentUpon>prodotti.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +126,13 @@
     </Compile>
     <Compile Include="Pubblica\registrazione.aspx.designer.cs">
       <DependentUpon>registrazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pubblica\storico.aspx.cs">
+      <DependentUpon>storico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pubblica\storico.aspx.designer.cs">
+      <DependentUpon>storico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

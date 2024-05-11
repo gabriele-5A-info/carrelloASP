@@ -10,6 +10,17 @@ namespace carrelloASP.Pubblica
 {
     public partial class acquista : System.Web.UI.Page
     {
+        protected override void OnInit(EventArgs e)
+        {
+            if (Session["user"] == null)
+                Response.Redirect("../default.aspx");
+
+            if (Session["prodotto_id"] == null)
+                Response.Redirect("../default.aspx");
+
+            caricaProdotto();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!Page.IsPostBack)
@@ -19,8 +30,6 @@ namespace carrelloASP.Pubblica
 
                 if (Session["prodotto_id"] == null)
                     Response.Redirect("../default.aspx");
-
-                caricaProdotto();
             }
         }
 
@@ -45,10 +54,13 @@ namespace carrelloASP.Pubblica
             lblNome.Text = prodotto.nome;
             lblDescrizione.Text = prodotto.descrizione;
             lblPrezzo.Text = prodotto.prezzo;
-            imgProdotto.ImageUrl = prodotto.immagine;
+            // imgProdotto.ImageUrl = prodotto.immagine;
             txtQuantita.Text = "1";
 
-            btnAcquista.Text = "Acquista";
+            btnAcquista.Text = "Aggiungi al carrello";
+            
+            btnAcquista.Click += new EventHandler(btnAcquista_Click);
+            btnAcquista.CommandArgument = prodotto.id.ToString();
 
             panelBody.Controls.Add(lblNome);
             panelBody.Controls.Add(lblDescrizione);
@@ -58,22 +70,26 @@ namespace carrelloASP.Pubblica
             panelBody.Controls.Add(btnAcquista);
             panel.Controls.Add(panelBody);
             pnlProdotto.Controls.Add(panel);
-
-            btnAcquista.Click += new EventHandler(btnAcquista_Click);
-            btnAcquista.CommandArgument = prodotto.id.ToString();
         }
 
         protected void btnAcquista_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
 
-            int prodotto_id = Convert.ToInt32(btn.CommandArgument);
+            clsProdotti prodotto = new clsProdotti(Convert.ToInt32(btn.CommandArgument)).getProdotto();
+            prodotto.quantita -= Convert.ToInt32(((TextBox)((Button)sender).Parent.Controls[4]).Text);
 
-            int quantita = Convert.ToInt32(((TextBox)((Button)sender).Parent.Controls[4]).Text);
+            // if(prodotto.modifica()) -> gestire l'errore (es. prodotto non disponibile)
+            prodotto.modifica();
 
-            // clsCarrello carrello = new clsCarrello();
+            clsCarrelli carrello = new clsCarrelli(((clsUsers)Session["user"]).id);
 
-            // carrello.aggiungiProdotto(prodotto_id, quantita);
+            carrello.user_id = ((clsUsers)Session["user"]).id;
+            carrello.quantita = Convert.ToInt32(((TextBox)((Button)sender).Parent.Controls[4]).Text);
+            carrello.prodotto_id = Convert.ToInt32(btn.CommandArgument);
+
+            // if(!carrello.inserisci()) -> gestire l'errore (es. prodotto già presente nel carrello)
+            carrello.inserisci();
 
             Response.Redirect("carrello.aspx");
         }
