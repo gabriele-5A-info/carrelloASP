@@ -69,6 +69,20 @@ namespace carrelloASP.Classi
             return categorie;
         }
 
+        public clsCategorie getCategoria(int id)
+        {
+            adoNet db = new adoNet();
+            DataTable dt = db.eseguiQuery("SELECT * FROM categorie WHERE id = '" + id + "'", CommandType.Text);
+
+            if (dt.Rows.Count != 1)
+                return null;
+
+            return new clsCategorie(
+                id = Convert.ToInt32(dt.Rows[0]["id"]),
+                nome = dt.Rows[0]["nome"].ToString()
+            );
+        }
+
         public bool inserisci()
         {
             adoNet db = new adoNet();

@@ -24,6 +24,15 @@ namespace carrelloASP.Pubblica
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controllo Label14.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label14;
+
+        /// <summary>
         /// Controllo Label1.
         /// </summary>
         /// <remarks>
@@ -105,13 +114,13 @@ namespace carrelloASP.Pubblica
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Controllo txtImmagineAggiungi.
+        /// Controllo fuImmagineAggiungi.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImmagineAggiungi;
+        protected global::System.Web.UI.WebControls.FileUpload fuImmagineAggiungi;
 
         /// <summary>
         /// Controllo Label6.
@@ -148,6 +157,15 @@ namespace carrelloASP.Pubblica
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRisultatoAggiungi;
+
+        /// <summary>
+        /// Controllo Label15.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
         /// Controllo Label13.
@@ -249,13 +267,13 @@ namespace carrelloASP.Pubblica
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// Controllo txtImmagineModifica.
+        /// Controllo fuImmagineModifica.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImmagineModifica;
+        protected global::System.Web.UI.WebControls.FileUpload fuImmagineModifica;
 
         /// <summary>
         /// Controllo Label12.

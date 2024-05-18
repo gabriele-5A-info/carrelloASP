@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\db.sql" />
+    <Content Include="CSS\acquista.css" />
+    <Content Include="CSS\admin.css" />
+    <Content Include="CSS\carrello.css" />
+    <Content Include="CSS\prodotti.css" />
+    <Content Include="CSS\registrazione.css" />
+    <Content Include="CSS\storico.css" />
     <Content Include="default.aspx" />
     <Content Include="Pubblica\acquista.aspx" />
     <Content Include="Pubblica\admin.aspx" />
@@ -75,6 +81,7 @@
     <Content Include="Pubblica\prodotti.aspx" />
     <Content Include="Pubblica\registrazione.aspx" />
     <Content Include="Pubblica\storico.aspx" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +151,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

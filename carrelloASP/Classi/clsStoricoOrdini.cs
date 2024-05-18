@@ -95,7 +95,7 @@ namespace carrelloASP.Classi
         public List<clsStoricoOrdini> getOrdini()
         {
             adoNet db = new adoNet();
-            DataTable dt = db.eseguiQuery("SELECT * FROM storico_ordini WHERE user_id = " + pUser_id + "AND validita = 1", CommandType.Text);
+            DataTable dt = db.eseguiQuery("SELECT * FROM storico_ordini WHERE user_id = " + pUser_id + "AND validita = 1 ORDER BY data DESC", CommandType.Text);
 
             List<clsStoricoOrdini> ordini = new List<clsStoricoOrdini>();
 

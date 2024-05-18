@@ -60,7 +60,7 @@ namespace carrelloASP
                 panelBody.CssClass = "panel-body";
 
                 Image img = new Image();
-                img.ImageUrl = "Immagini/" + prodotto.immagine;
+                img.ImageUrl = "img/" + prodotto.immagine;
                 img.CssClass = "img-responsive";
                 img.Width = 150;
                 img.Height = 150;
@@ -75,15 +75,15 @@ namespace carrelloASP
 
                 Label lblPrezzo = new Label();
                 lblPrezzo.Text = "Prezzo: " + prodotto.prezzo + " €";
-                lblPrezzo.CssClass = "text-danger";
+                lblPrezzo.CssClass = "text-price";
 
                 Label lblQuantita = new Label();
                 lblQuantita.Text = "Quantità: " + prodotto.quantita;
-                lblQuantita.CssClass = "text-warning";
+                lblQuantita.CssClass = "text-quantita";
 
                 Button btnAcquista = new Button();
                 btnAcquista.Text = "Acquista";
-                btnAcquista.CssClass = "btn btn-success";
+                btnAcquista.CssClass = "btn btn-acquista";
                 btnAcquista.Click += new EventHandler(btnAcquista_Click);
                 btnAcquista.CommandArgument = prodotto.id.ToString();
 
@@ -109,6 +109,11 @@ namespace carrelloASP
         {
             Session["prodotto_id"] = ((Button)sender).CommandArgument;
             Response.Redirect("Pubblica/acquista.aspx");
+        }
+
+        protected void btnCarrello_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Pubblica/carrello.aspx");
         }
     }
 }

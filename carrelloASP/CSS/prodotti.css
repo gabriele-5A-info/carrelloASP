@@ -1,0 +1,220 @@
+﻿.btnBack {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 10px 13px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: 1em;
+    background-color: #f44336;
+    color: white;
+}
+
+.btnBack:hover {
+    background-color: #da190b;
+}
+
+.container-aggiungi{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container-aggiungi:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.title-aggiungi{
+    font-size: 2em !important;
+    margin-bottom: 20px;
+}
+
+.container-aggiungi span{
+    font-size: 1.2em;
+}
+
+.container-aggiungi input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-aggiungi input:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-aggiungi input:active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-aggiungi .fuAggiungiImmagine{
+    /* upload immagini */
+    width: 30%;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.container-aggiungi .ddlAggiungiCategoria{
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-aggiungi .ddlAggiungiCategoria:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-aggiungi .ddlAggiungiCategoria:active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-aggiungi .btnAggiungi{
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    width: 30%;
+}
+
+.container-aggiungi .btnAggiungi:hover{
+    background-color: #45a049;
+}
+
+.container-aggiungi .btnAggiungi:active{
+    background-color: #45a049;
+}
+
+.container-aggiungi .lblRisultatoAggiungi {
+    font-size: 1.5em;
+}
+
+.container-modifica{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container-modifica:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.title-modifica{
+    font-size: 2em !important;
+    margin-bottom: 20px;
+}
+
+.ddlElementoModifica {
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-modifica span{
+    font-size: 1.2em;
+}
+
+.container-modifica input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-modifica input:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica input:active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica .fuModificaImmagine{
+    /* upload immagini */
+    width: 30%;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.container-modifica .ddlModificaCategoria{
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-modifica .ddlModificaCategoria:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica .ddlModificaCategoria:active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica .ddlModificaValidita{
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.container-modifica .ddlModificaValidita:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica .ddlModificaValidita:active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container-modifica .btnModifica{
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: 1em;
+    background-color: #da190b;
+    color: white;
+    width: 30%;
+}
+
+.container-modifica .btnModifica:hover{
+    background-color: #f44336;
+}
+
+.container-modifica .btnModifica:active{
+    background-color: #f44336;
+}
+
+.container-modifica .lblRisultatoModifica {
+    font-size: 1.5em;
+}

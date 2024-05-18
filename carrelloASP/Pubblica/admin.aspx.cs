@@ -67,7 +67,7 @@ namespace carrelloASP.Pubblica
                 txtDescrizioneModifica.Text = string.Empty;
                 txtPrezzoModifica.Text = string.Empty;
                 txtQuantitaModifica.Text = string.Empty;
-                txtImmagineModifica.Text = string.Empty;
+                fuImmagineModifica.Attributes.Clear();
                 ddlValiditaModifica.SelectedValue = string.Empty;
                 ddlCategoriaModifica.SelectedValue = string.Empty;
                 return;
@@ -75,12 +75,17 @@ namespace carrelloASP.Pubblica
 
             clsProdotti prodotto = new clsProdotti(Convert.ToInt32(ddlElementoModifica.SelectedValue)).getProdotto();
 
+            txtNomeModifica.Text = prodotto.nome;
+            txtDescrizioneModifica.Text = prodotto.descrizione;
+            txtPrezzoModifica.Text = prodotto.prezzo.ToString(CultureInfo.InvariantCulture);
+            txtQuantitaModifica.Text = prodotto.quantita.ToString();
+            ddlCategoriaModifica.SelectedValue = prodotto.categoria_id.ToString();
+            ddlFornitoreModifica.SelectedValue = prodotto.fornitore_id.ToString();
+
             if (prodotto.validita)
                 ddlValiditaModifica.SelectedValue = "1";
             else
                 ddlValiditaModifica.SelectedValue = "0";
-            ddlCategoriaModifica.SelectedValue = prodotto.categoria_id.ToString();
-            ddlFornitoreModifica.SelectedValue = prodotto.fornitore_id.ToString();
         }
 
         protected void btnModifica_Click(object sender, EventArgs e)
@@ -88,11 +93,13 @@ namespace carrelloASP.Pubblica
             if (ddlElementoModifica.SelectedValue == string.Empty)
             {
                 lblRisultatoModifica.Text = "Selezionare un prodotto da modificare";
+                lblRisultatoModifica.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
             clsProdotti prodotto = new clsProdotti(Convert.ToInt32(ddlElementoModifica.SelectedValue));
             prodotto = prodotto.getProdotto(prodotto.id);
+            string tempImg = prodotto.immagine;
 
             clsProdotti prodottoModifica = new clsProdotti(
                 prodotto.id,
@@ -100,36 +107,76 @@ namespace carrelloASP.Pubblica
                 txtDescrizioneModifica.Text != string.Empty ? txtDescrizioneModifica.Text.Trim().Replace('\'', ' ') : prodotto.descrizione,
                 txtPrezzoModifica.Text != string.Empty ? txtPrezzoModifica.Text : prodotto.prezzo.ToString(CultureInfo.InvariantCulture),
                 txtQuantitaModifica.Text != string.Empty ? Convert.ToInt32(txtQuantitaModifica.Text) : prodotto.quantita,
-                txtImmagineModifica.Text != string.Empty ? txtImmagineModifica.Text.Trim().Replace('\'', ' ') : prodotto.immagine,
+                fuImmagineModifica.FileName != string.Empty ? fuImmagineModifica.FileName : prodotto.immagine,
                 ddlCategoriaModifica.SelectedValue != string.Empty ? Convert.ToInt32(ddlCategoriaModifica.SelectedValue) : prodotto.categoria_id,
                 ddlFornitoreModifica.SelectedValue != string.Empty ? Convert.ToInt32(ddlFornitoreModifica.SelectedValue) : prodotto.fornitore_id,
                 ddlValiditaModifica.SelectedValue != string.Empty ? Convert.ToBoolean(Convert.ToInt32(ddlValiditaModifica.SelectedValue)) : prodotto.validita
             );
 
             if (prodottoModifica.modifica())
+            {
                 lblRisultatoModifica.Text = "Prodotto modificato correttamente";
+                lblRisultatoModifica.ForeColor = System.Drawing.Color.Green;
+            }
             else
+            {
                 lblRisultatoModifica.Text = "Errore nella modifica del prodotto";
+                lblRisultatoModifica.ForeColor = System.Drawing.Color.Red;
+            }
+
+            // cancellazione immagine vecchia
+            if (fuImmagineModifica.FileName != string.Empty)
+                System.IO.File.Delete(Server.MapPath("~/img/") + tempImg);
+
+            // caricamento immagine nella cartella img
+            if (fuImmagineModifica.FileName != string.Empty)
+                fuImmagineModifica.SaveAs(Server.MapPath("~/img/") + fuImmagineModifica.FileName);
         }
 
         protected void btnAggiungi_Click(object sender, EventArgs e)
         {
+            if(txtCategoriaAggiungi.Text.Trim() == string.Empty)
+            {
+                lblRisultatoAggiungi.Text = "Inserire il nome della categoria";
+                lblRisultatoAggiungi.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
             clsCategorie categoria = new clsCategorie(txtCategoriaAggiungi.Text.Trim().Replace('\'', ' '));
 
-            if(categoria.inserisci())
+            if (categoria.inserisci())
+            {
                 lblRisultatoAggiungi.Text = "Categoria aggiunta correttamente";
+                lblRisultatoAggiungi.ForeColor = System.Drawing.Color.Green;
+            }
             else
+            {
                 lblRisultatoAggiungi.Text = "Errore nell'aggiunta della categoria";
+                lblRisultatoAggiungi.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         protected void btnRimuovi_Click(object sender, EventArgs e)
         {
+            if(ddlCategoriaElimina.SelectedValue == string.Empty)
+            {
+                lblRisultatoRimuovi.Text = "Selezionare una categoria da eliminare";
+                lblRisultatoRimuovi.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
             clsCategorie categoria = new clsCategorie(Convert.ToInt32(ddlCategoriaElimina.SelectedValue));
 
             if (categoria.elimina())
+            {
                 lblRisultatoRimuovi.Text = "Categoria eliminata correttamente";
+                lblRisultatoRimuovi.ForeColor = System.Drawing.Color.Green;
+            }
             else
+            {
                 lblRisultatoRimuovi.Text = "Errore nell'eliminazione della categoria";
+                lblRisultatoRimuovi.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }

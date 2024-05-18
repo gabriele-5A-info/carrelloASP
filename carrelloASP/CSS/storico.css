@@ -1,0 +1,105 @@
+﻿.btnBack {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 10px 13px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: 1em;
+    background-color: #f44336;
+    color: white;
+}
+
+.btnBack:hover {
+    background-color: #da190b;
+}
+
+.container{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.pnStorico{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panel{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 30vh;
+    background-color: #f8f9fa;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.panel-body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.panel-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-left: 10%;
+    width: 50%;
+    height: 100%;
+}
+
+.panel-body .img-responsive{
+    border-radius: 20px;
+    margin-left: 5%;
+}
+
+.panel-info .text{
+    margin-bottom: 20px;
+}
+
+.panel-info .lbl-nome{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.panel-body .lbl-descrizione{
+    font-size: 1em;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.panel-info .lbl-prezzo{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #168b25;
+}
+
+.panel-info .lbl-quantita{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.panel-info .lbl-data{
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.8)
+}

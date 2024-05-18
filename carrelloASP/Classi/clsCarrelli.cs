@@ -114,6 +114,39 @@ namespace carrelloASP.Classi
             return ris == 1;
         }
 
+        public bool rimuovi(int id)
+        {
+            adoNet db = new adoNet();
+
+            int ris = db.eseguiNonQuery("DELETE FROM carrelli WHERE id = " + id, CommandType.Text);
+
+            return ris == 1;
+        }
+
+        public clsProdotti getProdottoCarrello(int id)
+        {
+            adoNet db = new adoNet();
+
+            DataTable dt = db.eseguiQuery("SELECT prodotto_id FROM carrelli WHERE id = " + id, CommandType.Text);
+
+            return new clsProdotti().getProdotto(Convert.ToInt32(dt.Rows[0]["prodotto_id"]));
+        }
+
+        public clsCarrelli getProdotto(int id)
+        {
+            adoNet db = new adoNet();
+
+            DataTable dt = db.eseguiQuery("SELECT * FROM carrelli WHERE id = " + id, CommandType.Text);
+
+            return new clsCarrelli(
+                Convert.ToInt32(dt.Rows[0]["id"]),
+                Convert.ToInt32(dt.Rows[0]["quantita"]),
+                Convert.ToInt32(dt.Rows[0]["prodotto_id"]),
+                Convert.ToInt32(dt.Rows[0]["user_id"]),
+                Convert.ToBoolean(dt.Rows[0]["validita"])
+            );
+        }
+
         public List<clsCarrelli> elenco()
         {
             List<clsCarrelli> carrelli = new List<clsCarrelli>();

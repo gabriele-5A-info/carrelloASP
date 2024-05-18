@@ -114,31 +114,22 @@ namespace carrelloASP.Pubblica
         protected global::System.Web.UI.WebControls.TextBox txtQuantitaModifica;
 
         /// <summary>
-        /// Controllo Label11.
+        /// Controllo Label5.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Controllo txtImmagineModifica.
+        /// Controllo fuImmagineModifica.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImmagineModifica;
-
-        /// <summary>
-        /// Controllo Label12.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.FileUpload fuImmagineModifica;
 
         /// <summary>
         /// Controllo ddlCategoriaModifica.

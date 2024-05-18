@@ -119,11 +119,29 @@ namespace carrelloASP.Classi
             );
         }
 
+        public clsUsers getUser(int id)
+        {
+            adoNet db = new adoNet();
+
+            DataTable dt = db.eseguiQuery("SELECT * FROM users WHERE id = '" + id + "' AND validita = 1", CommandType.Text);
+
+            if (dt.Rows.Count != 1)
+                return null;
+
+            return new clsUsers(
+                id = Convert.ToInt32(dt.Rows[0]["id"]),
+                username = dt.Rows[0]["username"].ToString(),
+                password = dt.Rows[0]["password"].ToString(),
+                email = dt.Rows[0]["email"].ToString(),
+                role = dt.Rows[0]["role"].ToString()
+            );
+        }
+
         public List<clsUsers> elencoFornitori()
         {
             adoNet db = new adoNet();
 
-            DataTable dt = db.eseguiQuery("SELECT * FROM users WHERE role = 'fornitore' AND validita = 1", CommandType.Text);
+            DataTable dt = db.eseguiQuery("SELECT * FROM users WHERE role = 'fornitore' OR role = 'admin' AND validita = 1", CommandType.Text);
 
             List<clsUsers> fornitori = new List<clsUsers>();
 

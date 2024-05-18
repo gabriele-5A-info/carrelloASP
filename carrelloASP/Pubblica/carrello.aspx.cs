@@ -42,38 +42,74 @@ namespace carrelloASP.Pubblica
 
                 Panel panel = new Panel();
                 Panel panelBody = new Panel();
+                Panel panelInfo = new Panel();
 
                 Label lblNome = new Label();
                 Label lblDescrizione = new Label();
                 Label lblPrezzo = new Label();
                 Image imgProdotto = new Image();
-                TextBox txtQuantita = new TextBox();
+                Label lblQuantita = new Label();
+
+                Button btnRimuovi = new Button();
 
                 panel.CssClass = "panel panel-default";
                 panelBody.CssClass = "panel-body";
+                panelInfo.CssClass = "panel-info";
 
                 lblNome.Text = prodotto.nome;
                 lblDescrizione.Text = prodotto.descrizione;
                 lblPrezzo.Text = prodotto.prezzo;
-                // imgProdotto.ImageUrl = prodotto.immagine;
-                txtQuantita.Text = carrello.quantita.ToString();
+                imgProdotto.ImageUrl = "../img/" + prodotto.immagine;
+                lblQuantita.Text = carrello.quantita.ToString();
 
-                panelBody.Controls.Add(lblNome);
-                panelBody.Controls.Add(lblDescrizione);
-                panelBody.Controls.Add(lblPrezzo);
+                lblNome.CssClass = "text lbl-nome";
+                lblDescrizione.CssClass = "text lbl-descrizione";
+                lblPrezzo.CssClass = "text lbl-prezzo";
+                imgProdotto.CssClass = "img-responsive";
+                imgProdotto.Width = 250;
+                imgProdotto.Height = 250;
+                lblQuantita.CssClass = "text lbl-quantita";
+
                 panelBody.Controls.Add(imgProdotto);
-                panelBody.Controls.Add(txtQuantita);
+
+                btnRimuovi.CssClass = "btn btn-rimuovi";
+                btnRimuovi.Text = "Rimuovi";
+                btnRimuovi.Click += new EventHandler(btnRimuovi_Click);
+                btnRimuovi.CommandArgument = carrello.id.ToString();
+
+                panelInfo.Controls.Add(lblNome);
+                panelInfo.Controls.Add(lblDescrizione);
+                panelInfo.Controls.Add(lblPrezzo);
+                panelInfo.Controls.Add(lblQuantita);
+                panelInfo.Controls.Add(btnRimuovi);
 
                 panel.Controls.Add(panelBody);
+                panel.Controls.Add(panelInfo);
 
                 pnCarrello.Controls.Add(panel);
             }
 
             Button btnAcquista = new Button();
+            btnAcquista.CssClass = "btn btn-acquista";
             btnAcquista.Text = "Acquista";
             btnAcquista.Click += new EventHandler(btnAcquista_Click);
 
             pnCarrello.Controls.Add(btnAcquista);
+        }
+
+        protected void btnRimuovi_Click(object sender, EventArgs e)
+        {
+            string id = ((Button)sender).CommandArgument;
+            clsUsers user = (clsUsers)Session["user"];
+            clsCarrelli car = new clsCarrelli(user.id).getProdotto(Convert.ToInt32(id));
+            clsProdotti prodotto = new clsCarrelli(user.id).getProdottoCarrello(Convert.ToInt32(id));
+
+            car.rimuovi(Convert.ToInt32(id));
+
+            prodotto.quantita += car.quantita;
+            prodotto.modifica();
+
+            Response.Redirect("carrello.aspx");
         }
 
         protected void btnAcquista_Click(object sender, EventArgs e)
@@ -85,6 +121,11 @@ namespace carrelloASP.Pubblica
             storico.inserisci(car.elenco());
             car.acquista();
 
+            Response.Redirect("storico.aspx");
+        }
+
+        protected void btnStorico_Click(object sender, EventArgs e)
+        {
             Response.Redirect("storico.aspx");
         }
     }
